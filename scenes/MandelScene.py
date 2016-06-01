@@ -43,6 +43,8 @@ class MandelScene(object):
         self._rotate_speed = uniform(-0.04, 0.04)
         self._frame_index = 0
 
+    def poke(self):
+        pass
 
     def update(self, dt):
         render_mandelbrot(self._image, self._point[0], self._scale, self._angle, self._cs, self._pal, 150)

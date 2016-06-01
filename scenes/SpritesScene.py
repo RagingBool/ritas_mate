@@ -21,6 +21,9 @@ class SpritesScene(object):
         self._alpha = 0
         self._reset = True
 
+    def poke(self):
+        pass
+
     def update(self, dt):
         self._acc_time += dt
 

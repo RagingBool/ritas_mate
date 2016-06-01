@@ -3,6 +3,9 @@ from graphics import render
 from opc import Client
 from scenes.SpritesScene import SpritesScene
 from scenes.MandelScene import MandelScene
+from scenes.FunctionScene import FunctionScene
+from scenes.FunctionScene2 import FunctionScene2
+from scenes.SquaresScene import SquaresScene
 import random
 
 class Party(object):
@@ -11,13 +14,17 @@ class Party(object):
         self._scenes = [
             SpritesScene(),
             MandelScene(),
+            FunctionScene(),
+            FunctionScene2(),
+            SquaresScene(),
         ]
         self._timer = Timer(self._switch)
-        self._timer.set_period(2.0)
+        self._timer.set_period(10.0)
         self._switch()
 
     def _switch(self):
         self._scene = random.choice(self._scenes)
+        self._scene.poke()
 
     def update(self, dt):
         self._timer.update(dt)
